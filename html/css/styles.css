@@ -1,0 +1,56 @@
+body {
+  background-color: #8ac4d0;
+  /* background-color: black; */
+}
+h1:hover{
+  color: white;
+  transition: color 0.5s;
+  /* background-color: #28527a; */
+}
+h3{
+  color: yellow;
+}
+
+hr {
+  /* background-color: white; */
+  border-style: none;
+  border-color: gray;
+  border-width: 10px;
+  /* border-style: dotted none none; */
+  border-top-style: dotted;
+  /* border: dotted; */
+  /* height: 2px; */
+  width: 5%;
+}
+
+.different{
+  text-decoration:underline;
+}
+
+.position{
+  /* position: relative; */
+  position: static;
+  left: 30px;
+  bottom: 30px;
+}
+
+.fixed{
+  position: fixed;
+}
+
+img:hover{
+  background-color: blue;
+  color: orange;
+}
+
+/* class = can use for multiple styles
+to do class you write:
+.class{}
+id = can only be used once
+to do a id you write:
+#id{} */
+
+/* Selects any <a> element when "hovered" */
+/* a:hover {
+  color: orange;
+} */

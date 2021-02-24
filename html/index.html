@@ -5,11 +5,31 @@
 <head>
   <meta charset="utf-8">
   <title>Johnny's Personal Webpage</title>
+  <!-- how to add css stylesheet to your html -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<!-- having style in the html is called internal css -->
+<!-- <style>
+  body{
+    background-color: #8ac4d0;
+  }
+  hr{
+    /* background-color: white; */
+    border-style: none;
+    border-color: gray;
+    border-width: 10px;
+    /* border-style: dotted none none; */
+    border-top-style: dotted;
+    /* border: dotted; */
+    /* height: 2px; */
+    width: 30%;
+  }
+</style> -->
 
 <body>
   <!-- it seems like cellspacing is like padding on the outside -->
-  <table cellspacing="20%">
+  <table cellspacing="20%" class="fixed">
     <tr>
       <td>
         <img width="200" height="200"
@@ -30,16 +50,17 @@
 
   <br>
   <!-- insert picture with image from the folder -->
-  <img width="50%" height="50%" src="image/food_fork.jpg" alt="fork food">
+  <img class="position" width="50%" height="50%" src="image/food_fork.jpg" alt="fork food">
   <!-- H = header, header goes from h1->h6  -->
   <h1>Johnny Vang</h1>
   <!-- em = emphasis, kind of like italic -->
   <!-- strong = bold, p = paragraph -->
-  <p><em>Founder of some <strong>stuff</strong></em></p>
+  <!-- span is inline versus div is more of a block -->
+  <p><em>Founder of <span class="different">some</span> <strong>stuff</strong></em></p>
   <!-- hr = horizontal rule -->
   <hr>
 
-  <h3>I am trying to build a website using html</h3>
+  <h3>I am trying to <span class="different">build</span> a website using html</h3>
   <!-- ul = unorder list (bullet point), li = list items -->
   <ul>
     <li>hello</li>
