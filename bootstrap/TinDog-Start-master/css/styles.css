@@ -2,24 +2,9 @@ body{
   font-family: "Montserrat", sans-serif;
 }
 
-h1 {
-  font-size: 3rem;
-  line-height: 1.5;
+h1, h2, h3, h4, h5, h6{
   font-family: "Montserrat-Black", sans-serif;
-  font-weight: bold;
-  color: white;
-}
-
-h2{
-  font-size: 3 rem;
-  font-family: "Montserrat-Bold", sans-serif;
-  line-height: 1.5;
-}
-
-h3{
-  font-size: 1.5rem;
-  font-family: "Montserrat-Bold", sans-serif;
-  font-weight: bold;
+    line-height: 1.5;
 }
 
 p{
@@ -27,9 +12,25 @@ p{
   font-weight: bold;
 }
 
+/* modular css  */
 .container-fluid {
   padding: 3% 15% 7%;
 }
+
+.big-title{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.white-colored{
+  color:white;
+}
+
+.black-clored{
+  color: black;
+}
+
+/* title page */
 
 #title {
   background-color: #ff4c68;
@@ -37,6 +38,34 @@ p{
   /* height: 500px; */
 }
 
+.title-image{
+  width: 60%;
+  /* height: 40%; */
+  display: block;
+  margin: auto;
+  /* padding: 30px 0; */
+  /* justify-content: center; */
+  /* position: relative; */
+  /* margin-right: 300px; */
+  transform: rotate(25deg);
+  /* padding: 0 auto; */
+  /* z-index: -1; */
+  /* position: absolute; */
+}
+
+/* css media query or break point  */
+@media (max-width: 992px){
+  #title{
+    text-align: center;
+  }
+
+  .title-image{
+    transform: rotate(0deg);
+  }
+}
+
+
+/* navigation bar */
 .navbar{
   margin: 0 0 4.5rem 0;
 }
@@ -61,20 +90,6 @@ p{
   margin: 5% 3% 5% 0%;
 }
 
-.title-image{
-  width: 60%;
-  /* height: 40%; */
-  display: block;
-  margin: auto;
-  /* padding: 30px 0; */
-  /* justify-content: center; */
-  /* position: relative; */
-  /* margin-right: 300px; */
-  transform: rotate(25deg);
-  /* padding: 0 auto; */
-  /* z-index: -1; */
-  /* position: absolute; */
-}
 
 #features{
   padding: 7% 15%;
@@ -84,14 +99,14 @@ p{
   bottom: 125px; */
   /* top: 125px; */
 }
-.feature-box{
-  /* position: relative; */
-  /* bottom: 100px; */
-}
 
 .feature-box{
   text-align: center;
   padding: 5%;
+}
+
+.feature-text{
+  font-weight: bold;
 }
 
 .fawesome{
@@ -143,4 +158,29 @@ p{
 
 .pricing-column{
   padding: 3% 2%;
+}
+
+.pricing-header{
+  font-size: 3rem;
+}
+
+.pricing-texting{
+  font-weight: bold;
+}
+
+#cta{
+  /* font-size: 30px; */
+  padding: 7% 15%;
+  color: #fff;
+  background-color: #ff4c68;
+  text-align: center;
+}
+
+#footer{
+  padding: 7% 15%;
+  text-align: center;
+}
+
+.gap{
+  margin: 5px;
 }
