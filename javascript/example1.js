@@ -29,3 +29,84 @@ alert(tweetUnder140);
 // Turn to uppercase
 var = name = "Angela"
 name.toUpperCase();
+
+// how to capitalize the first letter in a name
+var name = prompt("what is your name?");
+var firstChar = name.slice(0,1);
+var upperCaseFirstChar = firstChar.toUpperCase();
+var restOfName = name.slice(1,name.length);
+var capName = upperCaseFirstChar + restOfName;
+alert("hello, " + capName);
+
+
+// numbers
+var dogAge = prompt("how old is your dog?");
+var humangAge = ((dogAge - 2)*4+21);
+alert("Your dog is" + humangAge + "years old in human years.");
+
+
+// Karel solution
+function main(){
+   beepersRight();
+   goUpTurnLeft();
+   beepersLeft();
+   goUpTurnRight();
+      beepersRight();
+   goUpTurnLeft();
+   beepersLeft();
+   goUpTurnRight();
+      beepersRight();
+}
+
+function goUpTurnRight() {
+   turnRight();
+   move();
+   turnRight();
+}
+
+function goUpTurnLeft() {
+   turnLeft();
+   move();
+   turnLeft();
+}
+
+function beepersRight() {
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+}
+
+function beepersLeft() {
+   move();
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+   move();
+}
+
+// how to make a function
+function getMilk() {
+  console.log("leaveHouse");
+  console.log("moveRight");
+  console.log("moveRight");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveUp");
+  console.log("moveRight");
+  console.log("moveRight");
+  console.log("moveLeft");
+  console.log("moveLeft");
+  console.log("moveDown");
+  console.log("moveDown");
+  console.log("moveDown");
+  console.log("moveDown");
+  console.log("moveLeft");
+  console.log("moveLeft");
+  console.log("enterHouse");
+}
