@@ -74,9 +74,46 @@ app.get("/", function(req, res){
 });
 
 ------------------------------------------------------------------------------
+Lesson 230: 
+
 nodemon - a npm package that will make it way easier to auto start a server 
 
 npm install -g nodemon or sudo npm install -g nodemon (note sudo only works in mac or linux) 
+
+nodemon is a utility that will monitor for any changes in your source and automatically restart your server. 
+
+go to your server directory: 
+	nodemon server.js 
+
+- once you change your server.js file, nodemon will refresh your server with the new code
+- you will not need to click (cltr+c) and restart your server using node server.js 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

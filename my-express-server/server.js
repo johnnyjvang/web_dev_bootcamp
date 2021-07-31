@@ -23,10 +23,10 @@ app.get("/contact", function(require, response){
 
 // hobbies route
 app.get("/hobbies", function(require, response){
-  response.send("<h1>This is my hobbies</h1>")
+  response.send("<h1>This is my hobbies page</h1>")
 });
 
-// aboute route 
+// aboute route
 app.get("/about", function(require, response){
   response.send("<h1>This is my about page</h1>")
 });
