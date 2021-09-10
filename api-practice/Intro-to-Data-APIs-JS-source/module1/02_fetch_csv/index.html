@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Train: Data and APIs Project 1</title>
+    <!-- chart.js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+  <body>
+    <h1>Global Average Temperatures 1880-2018</h1>
+    <!-- canvas is only a container for graphics, must use js to draw -->
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <!-- online csv files  -->
+    <script>
+      // Data from: https://data.giss.nasa.gov/gistemp/
+      // Mean from: https://earthobservatory.nasa.gov/world-of-change/DecadalTemp
+
+      // The load event is fired when the whole page has loaded, including all
+      // dependent resources such as stylesheets and images
+      window.addEventListener('load', setup);
+
+      // async must be indicated before function to make it asynchronous
+      // all async functions called within must use the keyword "await"
+      async function setup() {
+        const ctx = document.getElementById('myChart').getContext('2d');
+        // globalTemps is essentially a CLASS, do not need to have a __self class setup
+        const globalTemps = await getData();
+        const myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: globalTemps.years,
+            datasets: [
+              {
+                label: 'Temperature in °C',
+                data: globalTemps.temps,
+                fill: false,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderWidth: 1
+              }
+            ]
+          },
+          options: {}
+        });
+      }
+
+      async function getData() {
+        // const response = await fetch('testdata.csv');
+        const response = await fetch('ZonAnn.Ts+dSST.csv');
+        const data = await response.text();
+        const years = [];
+        const temps = [];
+        // we first split the data by the row, delimiter is the line break (\n)
+        // delete first row, so use splice(1), only need info not the details
+        const rows = data.split('\n').slice(1);
+        rows.forEach(row => {
+          // then split each column into arrays
+          // delimiter for columns is commas
+          const cols = row.split(',');
+          years.push(cols[0]);
+          // 14 is average temp, need to add to normalize data 
+          temps.push(14 + parseFloat(cols[1]));
+        });
+        return { years, temps };
+      }
+
+      // getData of just test.csv file
+      async function getTestData(){
+        const response = await.fetch("testdata.csv");
+        const data = await response.text();
+        console.log(data);
+        const rows = data.split('\n').slice(1);
+        rows.forEach(elt=>{
+          const row = elt.split(',');
+          const year = row[0];
+          const temp = row[1];
+          console.log(year,temp);
+        });
+      }
+
+    </script>
+  </body>
+</html>

@@ -43,9 +43,11 @@ app.post("/", function(req, res){
   const units = "imperial";
   const url = "https://api.openweathermap.org/data/2.5/weather?q="+ city_name + "&appid=" + key + "&units=" + units;
 
+  // used to query the API and receive data
   https.get(url, function(response){
     console.log(response.statusCode);
 
+    // sending the response.on as the data to the function? 
     response.on("data", function(data){
       const weatherData = JSON.parse(data);
       const temp = weatherData.main.temp
