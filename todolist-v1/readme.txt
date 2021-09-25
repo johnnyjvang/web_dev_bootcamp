@@ -176,6 +176,7 @@ app.post("/", function(request, response){
 
 269. The Concept of Scope in the Context of Javascript 
 
+
 Scope - local vs global variables 
 
 types of variable parameters: var, let, const 
@@ -190,20 +191,90 @@ wise words: always use "let" versus "var"
 
 270. Adding Pre-made CSS stylesheets to your Website
 
+task:
+
+- download styles.css 
+- create new folder called public 
+- add styles.css to public folder 
+- app.use(express.static("public") - add to app.js 
+	- allow express to pull from public folder 
+- add link/stylesheet to list.ejs 
+- add css class/ID's to specific html tags 
+
+- add box/id class to "kindofDay"
+- add box class and item class to UI/LI elements 
 
 
+- for input tag, turn autocomplete="off" (removes suggested autocompletes) 
+
+for more information on css selectors check MDN page:
+https://www.w3schools.com/cssref/css_selectors.asp
 
 
+271. Understanding Templating vs Layouts 
+
+- change kindOfDay to listTitle (change for different todo categories / URL) 
+- add app.get('/work') -> res.render("list", {listTitle: "Work list", newListItems: workItems}) 
+- let workItems = []
+- app.post("/work", function(request, response)) 
+	let item = req.body.newItem 
+	workItems.push(req.body.newItem) 
+
+- fix app.post('/') to reroute for the app.post("/work") 
+- add value to button, make it dynamic with EJS tag 
+	value=<%= listTitle %> 
+
+- add if/else statement into app.post("/") 
+	check if button was pressed in route("/") or ("/work") 
+
+- EJS, create a layout or partial for headers and footers 
+- create header.ejs / footer.ejs
+- create about.ejs
+- add app.get('/about')
+- add header/footer to about.ejs 
 
 
+<%- include('header'); -%>
+<h1>
+  Title
+</h1>
+<p>
+  My page
+</p>
+<%- include('footer'); -%>
 
 
+272. Understanding Node Module Exports: How to pass Functions and data between files
 
 
+- repackage, make a module to generate the current date 
+- create date.js - copy/paste code into it 
+	- add console.log(module) statement 
+- const date = require(__dirname + "/date.js"); 
+- module.exports = "hello world" - add to date.js
+	- module.export = getDate (pass function) 
+	- note: leave as getDate not getData(), avoids running code 
+- javascript object 
+	- module.exports.getDate = getDate;
+ 	- module.exports.getDay = getDay;
 
+- make both functions anonymous to reduce lines of code, clearer 
+- turn functions into varibles 
+- exports = module.exports (short-hand) 
+- const in javascript, allows to push new items into the array 
+	- not necessarily a constant 
+	- does not protect items in the array 
 
+const date = require(__dirname + "/date.js")
 
+app.get("/", function(req, res) {
+  let day = date.getDate();
 
+  res.render('list', {
+    listTitle: day,
+    newItems: items
+  });
+})
 
 
 

@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Render</title>
-  </head>
-  <body>
-    <% if (kindofday === "Saturday" || kindofday === "Sunday") { %>
-        <h1 style="color: blue">Todo list for <%= kindofday %></h1>
-  <%  } else {%>
-        <h1 style="color: green">Todo list for <%= kindofday %></h1>
-  <%  }%>
+<%- include('header'); -%>
 
-  <ul>
-    <li>List 1</li>
-    <li>List 2</li>
-    <li>List 3</li>
-  <%  for (var i=0; i<newItems.length; i++){ %>
-      <li> <%= newItems[i] %> </li>
-      <!-- <li> <%= newItems[i] %> </li> -->
-  <%  } %>
+  <div class="box" id="heading">
+    <% if (listTitle === "Saturday" || listTitle === "Sunday") { %>
+    <h1 style="color: blue">Todo list for <%= listTitle %></h1>
+    <%  } else {%>
+    <h1 style="color: green">Todo list for <%= listTitle %></h1>
+    <%  }%>
+  </div>
 
-  </ul>
+  <div class="box">
+    <%  for (var i=0; i<newItems.length; i++){ %>
+    <div class="item">
+      <input type="checkbox">
+      <p> <%= newItems[i] %> </p>
+    </div>
+    <%  } %>
 
-  <form class="" action="/" method="post">
-    <input type="text" name="newItems">
-    <button type="submit" name="button">Add</button>
-  </form>
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItems" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value=<%= listTitle %>>+</button>
+    </form>
+  </div>
 
-  </body>
-</html>
+<%- include('footer'); -%>
