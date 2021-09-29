@@ -275,32 +275,150 @@ app.get("/posts/:post",function(request, response){
 });
 
 
+308. challenge 17
+
+
+- pressing "rs" in nodemon will restart the server 
+- go to localhost:3000/posts/test
+	- console.log("match found") 
+- all parameters should work! 
+
+
+app.get("/posts/:post",function(request, response){
+  posts.forEach((item)=>{
+    if (request.params.post == item.title){
+      console.log(item.title, "match");
+    } else{
+      console.log("no match")
+    }
+  });
+});
+
+
+310. Challenge 18 
+
+Kebab case -- or kebab-case -- is a programming variable naming convention where a developer replaces the spaces between words with a dash. ... Two or more words are often required to properly convey a resource's meaning. However, most programming languages don't allow spaces between words.
+
+Lodash - a modern javascript utility library delivery modularity, performance & extras 
+
+https://lodash.com/
+
+- install lodash using npm 
+	npm i lodash 
+	const lodash = require("lodash"); 
+
+- search lower in lodash library 
+
+_.lowerCase([string=''])
+
+Example
+_.lowerCase('--Foo-Bar--');
+// => 'foo bar'
+ 
+_.lowerCase('fooBar');
+// => 'foo bar'
+ 
+_.lowerCase('__FOO_BAR__');
+// => 'foo bar'
+
+Converts string, as space separated words, to lower case.
+
+- title "another post" should match when typing in localhost:3000/posts/another post 
+
+
+let _posts = _.lowerCase(request.params.post);
+
+  if ( _posts === _.lowerCase(item.title)){
+      console.log(item.title, "match");
+    } else{
+      console.log("no match")
+    }
+
+
+312. Challenge 19
+
+- localhost:3000/posts/post1
+- going to that url should go to a unique post with a standalone post 
+
+let currentPost = {};
+
+if ( _posts === _.lowerCase(item.title)){
+      let currentTitle = item.title;
+      let currentBody = item.body;
+      currentPost = {
+        body: currentBody,
+        title: currentTitle
+      }
+
+response.render("post", {postContent: currentPost})
+
+
+post.ejs: 
+
+<%- include('partials/header'); -%>
+
+<h1><%= postContent.title %></h1>
+<p>  <%= postContent.body %> </p>
+
+
+<%- include('partials/footer'); -%>
 
 
 
+------ Better Method
+
+    if ( _posts === _.lowerCase(item.title)){
+      let currentTitle = item.title;
+      let currentBody = item.body;
+      response.render("post", {
+        title: currentTitle,
+        body: currentBody
+      })
+
+314. Challenge 20 
 
 
+- shorten the post on "/" route to be less than "x" amount of text 
+- shorten to 100 characters (show only preview) 
+
+- search using this format: 
+
+	verb object programming-language 
+
+- Search query: 
+
+	truncate string javascript  
+
+https://stackoverflow.com/questions/1301512/truncate-a-string-straight-javascript
+
+subString() 
+
+var length = 3;
+var myString = "ABCDEFG";
+var myTruncatedString = myString.substring(0,length);
+// The value of myTruncatedString is "ABC"
+
+<%  for (var i=0; i<postContent.length; i++){ %>
+  <h1><%= postContent[i].title %></h1>
+  <p>  <%= postContent[i].body.substring(0,100) %> ... </p>
+  <!-- <p>  <%= postContent[i].title %> <%= postContent[i].body %> </p> -->
+<%  } %>
 
 
+316. challenge 21
+
+- add "read more" at the end of the link 
+- link should URL to the new post of all of the content 
+- add EJS to the anchor tag 
 
 
+<a href="/posts/<%= postContent[i].title%>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<%  for (var i=0; i<postContent.length; i++){ %>
+  <h1><%= postContent[i].title %></h1>
+  <p>  <%= postContent[i].body.substring(0,100) + "..." %> <a href="/posts/<%= postContent[i].title%>">Read More</a> </p>
+  <!-- <p>  <%= postContent[i].title %> <%= postContent[i].body %> </p> -->
+<%  } %>
 
 
 

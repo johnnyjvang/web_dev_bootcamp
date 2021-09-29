@@ -9,7 +9,7 @@
 
 <%  for (var i=0; i<postContent.length; i++){ %>
   <h1><%= postContent[i].title %></h1>
-  <p>  <%= postContent[i].body %> </p>
+  <p>  <%= postContent[i].body.substring(0,100) + "..." %> <a href="/posts/<%= postContent[i].title%>">Read More</a> </p>
   <!-- <p>  <%= postContent[i].title %> <%= postContent[i].body %> </p> -->
 <%  } %>
 
@@ -17,7 +17,7 @@
 
 <% postContent.forEach((item)=>{ %>
   <h1><%= item.title %></h1>
-  <p>  <%= item.body %> </p>
+  <p>  <%= item.body.substring(0,100) + "..." %> <a href="/posts/<%= item.title %>">Read More</a></p>
 <% }) %>
 
 
