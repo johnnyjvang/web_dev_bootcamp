@@ -1,0 +1,24 @@
+<%- include('partials/header'); -%>
+
+<h1>Home Page</h1>
+<p> <%= homeContent %> </p>
+
+<%  console.log(postContent) %>
+
+<h1>for loop</h1>
+
+<%  for (var i=0; i<postContent.length; i++){ %>
+  <h1><%= postContent[i].title %></h1>
+  <p>  <%= postContent[i].body %> </p>
+  <!-- <p>  <%= postContent[i].title %> <%= postContent[i].body %> </p> -->
+<%  } %>
+
+<h1>.forEach</h1>
+
+<% postContent.forEach((item)=>{ %>
+  <h1><%= item.title %></h1>
+  <p>  <%= item.body %> </p>
+<% }) %>
+
+
+<%- include('partials/footer'); -%>
