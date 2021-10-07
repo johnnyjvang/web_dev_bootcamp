@@ -7,12 +7,13 @@ mongoose.connect('mongodb://localhost:27017/fruitsDB');
 
 // can add a Schema of how the collection is composed/arrange
 
-const fruitSchema = new mongoose.Schema ({
+const fruitSchema = new mongoose.Schema({
   name: String,
   rating: Number,
   review: String
 });
 
+// mongoose.model(modelName, schema)
 const Fruit = mongoose.model('Fruit', fruitSchema);
 
 const fruit = new Fruit({
@@ -38,7 +39,7 @@ const person = new Person({
 
 // person.save().then(() => console.log('person saved'));
 
-// how to insert more than 1 row of data 
+// how to insert more than 1 row of data
 const kiwi = new Fruit({
   name: "kiwi",
   score: 10,
@@ -57,10 +58,23 @@ const banana = new Fruit({
   review: "thats what she said!"
 });
 
-Fruit.insertMany([kiwi, orange, banana], function(err){
+// Fruit.insertMany([kiwi, orange, banana], function(err){
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("sucessfully saved all the fruits to fruitsDB!");
+//   }
+// });
+
+Fruit.find(function(err, fruits) {
   if (err) {
     console.log(err);
   } else {
-    console.log("sucessfully saved all the fruits to fruitsDB!");
+    console.log(fruits);
+    fruits.forEach((item) => {
+      console.log(item.name);
+    })
+    // will close the database, may take a few seconds
+    mongoose.connection.close();
   }
 });
