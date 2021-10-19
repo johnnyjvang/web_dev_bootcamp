@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+}
+
+.container {
+  height: 25vh;
+  width: 100vw;
+  position: relative;
+  padding: 8px 8px 32px 8px;
+  background: #dddccf;
+}
+
+.container:after {
+  background: linear-gradient(-45deg, green 16px, transparent 0), linear-gradient(45deg, green 16px, transparent 0);
+  background-position: left-bottom;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 32px;
+}
+
+#d-wrapper {
+  background-color: #fff;
+}
+
+#d-wrapper * {
+  margin: 0;
+  padding: 0;
+}
+
+#d-wrapper div.sep {
+  min-height: 200px;
+  padding: 32px 0;
+}
+
+#d-wrapper .zig-zag-top:before {
+  background:
+    linear-gradient(-45deg, #1ba1e2 16px, red 16px, blue 16px, transparent 0),
+    linear-gradient(45deg, #1ba1e2 16px, transparent 0);
+  background-position: left top;
+  background-repeat: repeat-x;
+  background-size: 22px 32px;
+  content: " ";
+  display: block;
+  height: 32px;
+  width: 100%;
+  position: relative;
+  bottom: 64px;
+  left: 0;
+}
+
+#d-wrapper div>* {
+  margin: 0 40px;
+}
+
+#d-wrapper .zig-zag-bottom {
+  margin: 32px 0;
+  margin-top: 0;
+  background: #1ba1e2;
+}
+
+#d-wrapper .zig-zag-top {
+  margin: 32px 0;
+  margin-bottom: 0;
+  background: #1ba1e2;
+}
+
+#d-wrapper .zig-zag-bottom,
+#d-wrapper .zig-zag-top {
+  padding: 32px 0;
+}
+
+#d-wrapper p,
+#d-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+  color: #fff;
+  font-family: "PT Sans Narrow", "Fjalla One", sans-serif;
+  font-weight: 900;
+  text-shadow: 1px 1px 0 #1b90e2, 2px 2px 0 #1b90e2, 3px 3px 0 #1b90e2, 4px 4px 0 #1b90e2, 5px 5px 0 #1b90e2;
+}
+
+#d-wrapper div.sep p,
+#d-wrapper div.sep h1 {
+  text-shadow: 1px 1px 0 #888, 2px 2px 0 #888, 3px 3px 0 #888, 4px 4px 0 #888, 5px 5px 0 #888;
+  color: #fff;
+}
+
+#d-wrapper h1 {
+  font-size: 4em;
+}
+
+#d-wrapper .zig-zag-bottom:after {
+  background:
+    linear-gradient(-45deg, transparent 16px, #1ba1e2 0),
+    linear-gradient(45deg, transparent 16px, #1ba1e2 0);
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  background-size: 22px 32px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 32px;
+  position: relative;
+  top: 64px;
+  left: 0px;
+}
+
+#d-wrapper p {
+  text-align: center;
+}
+
+#d-wrapper p:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.header-nav::before {
+  position: absolute;
+  top: 0;
+  right: -7px;
+  width: 7px;
+  height: 20px;
+  content: '';
+  transition: background .3s ease;
+  border-radius: 100%;
+}
+
+.header-nav2::after {
+  position: absolute;
+  top: 0;
+  right: -7px;
+  width: 7px;
+  height: 7px;
+  content: '';
+  transition: background .3s ease;
+  border-radius: 100%;
+}
+
+.headver-nav:hover{
+  background: blue;
+}
+
+
+.headver-nav2::after:hover{
+  background: blue;
+}
+
+.test{
+  /* font-size: 1rem; */
+  background: blue;
+  transition: font-size 0.3s;
+}
+
+.test:hover{
+  font-size: 5rem;
+}
+
+.relativey{
+  position: relative;
+}
+
+.texty{
+  width: 150px;
+  height: 100px;
+}
+
+.circle{
+  position: absolute;
+  /* display: none; */
+  background: transparent;
+  top: 0;
+  left: 70px;
+  width: 20px;
+  height: 20px;
+  content: '';
+  transition: background .3s ease;
+  border-radius: 100%;
+}
+
+
+.texty:hover{
+  cursor: pointer;
+}
+
+.texty:hover + .circle{
+  background: blue;
+}
+
+.card_container{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  width: 200px;
+  height: 200px;
+  background: blue;
+  margin-bottom: 0px;
+  position: relative;
+  transition: margin-bottom 0.3s ease;
+}
+
+.card:hover{
+  margin-bottom: 20px;
+}

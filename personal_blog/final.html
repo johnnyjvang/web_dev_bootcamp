@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="final.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <title>Joni Woni</title>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="logo" href="#">Joni Woni</a>
+      <div class="nav-links">
+        <a class="link" href="#">Home</a>
+        <a class="link" href="#">About</a>
+        <a class="link" href="#">Contact</a>
+      </div>
+    </div>
+    <i class="fa fa-bars"></i>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </header>
+  <div class="spacer">
+
+  </div>
+  <article class="">
+    <!-- <h1>Joni Woni Blog</h1> -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+      irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <img alt="gandalf" src="https://cdn0.iconfinder.com/data/icons/famous-character-vol-2-colored/48/JD-41-512.png">
+
+    <img alt="gandalf" src="https://cdn0.iconfinder.com/data/icons/famous-character-vol-2-colored/48/JD-41-512.png">
+
+    <img alt="gandalf" src="https://cdn0.iconfinder.com/data/icons/famous-character-vol-2-colored/48/JD-41-512.png">
+
+    <img alt="gandalf" src="https://cdn0.iconfinder.com/data/icons/famous-character-vol-2-colored/48/JD-41-512.png">
+
+  </article>
+  <footer>
+
+  </footer>
+  <script type="text/javascript">
+    window.onscroll = function() {
+      myFunction()
+    };
+
+    const nav_links = document.querySelectorAll('.link');
+
+    function myFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.querySelector('.nav').style.height = "10vh";
+        document.querySelector('.logo').style.fontSize = "2rem";
+        nav_links.forEach((item) => {
+          item.style.fontSize = "1.5rem";
+        });
+      } else {
+        document.querySelector('.nav').style.height = "15vh";
+        document.querySelector('.logo').style.fontSize = "3rem";
+        nav_links.forEach((item) => {
+          item.style.fontSize = "2rem";
+        });
+      }
+    }
+  </script>
+  <script src="final.js" charset="utf-8"></script>
+</body>
+
+</html>

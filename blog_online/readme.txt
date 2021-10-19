@@ -114,7 +114,7 @@ what we actually want to send over is the mongoDB database purely.
     });
 
 
-Change! 
+In home.ejs you’ll need to change the href of the anchor tag based on the post id instead of the post name.
 
 <a href="/posts/<%=post._id%>">Read More</a>
 
