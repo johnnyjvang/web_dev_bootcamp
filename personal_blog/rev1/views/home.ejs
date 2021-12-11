@@ -1,0 +1,58 @@
+<%- include("partials/header"); -%>
+
+<article id="home">
+
+  <div class="flex-row2 card-container">
+    <div class="blog-max">
+      <div class="text-container">
+        <h1>I Write Things</h1>
+        <p>Personal | Adventure | Food | Random </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-row card-container">
+
+    <div class="cards grid-ish">
+      <img class="card-image" src="https://i.pinimg.com/originals/e9/91/80/e991804378163190adbd288a473edc85.jpg" alt="one piece">
+      <h1>Title 1</h1>
+      <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit commodi amet veniam ipsa magnam tempora placeat iure facere quia sint eveniet nam expedita provident adipisci exercitationem iste, vel facilis est, quasi, nihil soluta autem quis et! Quaerat eligendi quia rerum ratione laboriosam qui error in commodi voluptate? Magnam laborum, dolor cupiditate rem porro, dignissimos ab eaque facilis esse in aut ipsum delectus vitae reiciendis harum quo sit. Temporibus nobis nihil harum, ut repudiandae asperiores molestias ex. Nam vel libero blanditiis amet laudantium ipsam commodi fugit quae, quasi, explicabo deserunt nobis veniam nesciunt doloremque, nisi sed animi molestiae? Dicta optio molestias illo accusamus sint sapiente cupiditate, distinctio adipisci voluptatem et minus reprehenderit eveniet reiciendis eos cum ipsam voluptates animi non. Eligendi distinctio minus est nulla natus beatae repudiandae totam dolore aut deserunt nisi vitae aperiam ullam, quos quas quaerat quae laborum unde, reprehenderit deleniti repellendus iure, culpa ea. At iure sed tempora laboriosam eaque dolores sequi quidem maiores voluptas nesciunt corporis neque repellendus veritatis autem, rerum consequuntur quasi! Laudantium dicta labore officia sapiente, consequatur in itaque, consequuntur quia repudiandae repellendus vitae inventore illo voluptatibus architecto tenetur ex voluptates voluptatem sed aliquid cupiditate recusandae. Ipsum temporibus officia incidunt beatae ullam non, commodi!</p>
+      <h6>November 7, 2021</h6>
+      <div class="card-tail"></div>
+
+    </div>
+
+    <div class="cards grid-ish">
+      <img class="card-image" src="https://i.pinimg.com/originals/e9/91/80/e991804378163190adbd288a473edc85.jpg" alt="one piece">
+      <h1>Title 2</h1>
+      <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit commodi amet veniam ipsa magnam tempora placeat iure facere quia sint eveniet nam expedita provident adipisci exercitationem iste, vel facilis est, quasi, nihil soluta autem quis et! Quaerat eligendi quia rerum ratione laboriosam qui error in commodi voluptate? Magnam laborum, dolor cupiditate rem porro, dignissimos ab eaque facilis esse in aut ipsum delectus vitae reiciendis harum quo sit. Temporibus nobis nihil harum, ut repudiandae asperiores molestias ex. Nam vel libero blanditiis amet laudantium ipsam commodi fugit quae, quasi, explicabo deserunt nobis veniam nesciunt doloremque, nisi sed animi molestiae? Dicta optio molestias illo accusamus sint sapiente cupiditate, distinctio adipisci voluptatem et minus reprehenderit eveniet reiciendis eos cum ipsam voluptates animi non. Eligendi distinctio minus est nulla natus beatae repudiandae totam dolore aut deserunt nisi vitae aperiam ullam, quos quas quaerat quae laborum unde, reprehenderit deleniti repellendus iure, culpa ea. At iure sed tempora laboriosam eaque dolores sequi quidem maiores voluptas nesciunt corporis neque repellendus veritatis autem, rerum consequuntur quasi! Laudantium dicta labore officia sapiente, consequatur in itaque, consequuntur quia repudiandae repellendus vitae inventore illo voluptatibus architecto tenetur ex voluptates voluptatem sed aliquid cupiditate recusandae. Ipsum temporibus officia incidunt beatae ullam non, commodi! </p>
+      <h6>November 7, 2021</h6>
+      <div class="card-tail">
+
+      </div>
+    </div>
+
+      <% posts.forEach(function(post){ %>
+      <div class="cards grid-ish">
+        <img class="card-image" src="https://i.pinimg.com/originals/e9/91/80/e991804378163190adbd288a473edc85.jpg" alt="one piece">
+        <h1><%=post.title%></h1>
+        <p>
+        <%=post.content.substring(0, 100) + " ..."%>
+        <a href="/posts/<%=post._id%>">Read More</a>
+        </p>
+
+
+        <h6><%=post.date%></h6>
+        <div class="card-tail"></div>
+      </div>
+
+      <% }) %>
+  </div>
+
+</article>
+
+
+
+
+
+<%- include("partials/footer"); -%>

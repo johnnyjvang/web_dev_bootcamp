@@ -41,3 +41,10 @@ function scrollFunction() {
 how to remove <a></a> link:
 
 text-decoration: none; 
+
+
+
+font awesome link:
+
+the one online is a piece of shit
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

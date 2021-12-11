@@ -1,0 +1,55 @@
+<%- include("partials/header"); -%>
+
+<article id="contact">
+
+  <div class="flex-row2 card-container">
+    <div class="blog-max contact">
+      <!-- <div class="container-relative humm">
+        <img class="imgy" src="https://t4.ftcdn.net/jpg/04/58/84/45/360_F_458844501_7UVJHQmbiRTpJnshu6fpIrxDIBXpjoHw.jpg" alt="">
+        <h1 class='center about-title'>Contact</h1>
+      </div> -->
+      <div class="container-relative humm">
+        <div class="white-color"></div>
+        <h1 class='center contact-prop'>Contact</h1>
+      </div>
+      <div class="text-container2">
+        <h1>Let's get Connected</h1>
+        <br>
+        <div class="contact-container">
+          <!-- action="https://formsubmit.co/your@email.com" method="POST" -->
+          <form action="https://formsubmit.co/johnnyjvang@gmail.com" method="POST">
+            <!-- honeypot -->
+            <input type="text" name="_honey" style="display: none" value="">
+
+            <!-- remove captcha -->
+            <!-- A CAPTCHA is a type of challenge–response test used in computing to determine whether or not the user is human. -->
+            <!-- <input type="hidden" name="_captcha" value="false"> -->
+
+            <!-- add success page -->
+            <!-- <input type="hidden" name="_sucess" value="localhost:3000/sucess.html"> -->
+
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+            <label for="lname">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email Address.." required>
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+
+      <div class="card-tail white"></div>
+    </div>
+  </div>
+
+
+</article>
+
+<%- include("partials/footer"); -%>
