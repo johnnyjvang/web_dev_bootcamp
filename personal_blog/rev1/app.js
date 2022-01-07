@@ -1,5 +1,6 @@
 //jshint esversion:6
 // -----------------------------------------------------------------------------
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -19,7 +20,28 @@ app.use(express.static("public"));
 // mongoose.connect("mongodb://localhost:27017/blogDB2", {useNewUrlParser: true});
 const mongodb_server = "mongodb://localhost:27017/";
 const database_name = "personblogDB";
-mongoose.connect(mongodb_server + database_name);
+// mongoose.connect(mongodb_server + database_name);
+
+const pw = process.env.PASSWORD
+const user_name = process.env.USER_NAME
+
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://" + user_name +  ":" +  pw  + "@cluster0.fww2s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+// const mongo_atlas_server =
+// mongosh "mongodb+srv://cluster0.fww2s.mongodb.net/myFirstDatabase" --username admin-joni
+
+// const uri= "mongodb+srv://admin-joni:" + pw + "@cluster0.fww2s.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+
+mongoose.connect(uri);
 
 // Everything in Mongoose starts with a Schema. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
 const postsSchema = new mongoose.Schema({
@@ -93,10 +115,18 @@ app.get("/posts/:postId", function(req, res){
 });
 
 // checks ot see if localhost:3000 is working
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
-});
+// app.listen(3000, function() {
+//   console.log("Server started on port 3000");
+// });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function() {
+  console.log("Server has started sucessfully");
+});
 
 
 
@@ -115,3 +145,9 @@ app.listen(3000, function() {
 // 	use fruitsDB
 // 	show collections
 // 	db.fruits.find()
+
+// run in command prompt
+// mongo "mongodb+srv://cluster0.fww2s.mongodb.net/myFirstDatabase" --username admin-joni
+
+// make sure your IP is allowed or white listed on the mongoDB atlast website
+// can also just make all Ip's work (not sure on the security)
